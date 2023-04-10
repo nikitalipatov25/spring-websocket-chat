@@ -1,7 +1,7 @@
 //package com.nikitalipatov.websocketserver.controller;
 //
-//import com.nikitalipatov.chatclient.model.ChatMessage;
-//import com.nikitalipatov.chatclient.service.impl.SessionHandler;
+//import com.nikitalipatov.websocketserver.trash.ChatMessage;
+//import com.nikitalipatov.websocketserver.trash.impl.SessionHandler;
 //import lombok.RequiredArgsConstructor;
 //import org.springframework.http.HttpStatus;
 //import org.springframework.messaging.simp.stomp.StompSession;

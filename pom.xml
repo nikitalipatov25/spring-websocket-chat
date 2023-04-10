@@ -14,7 +14,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>websocket-server</module>
-        <module>chat-client</module>
     </modules>
     <name>websocket-chat</name>
     <description>websocket-chat</description>
@@ -25,22 +24,22 @@
     </properties>
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.postgresql</groupId>
-                <artifactId>postgresql</artifactId>
-                <scope>runtime</scope>
-                <version>${postgresql-version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.postgresql</groupId>-->
+<!--                <artifactId>postgresql</artifactId>-->
+<!--                <scope>runtime</scope>-->
+<!--                <version>${postgresql-version}</version>-->
+<!--            </dependency>-->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <optional>true</optional>
                 <version>${lombock-version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-data-jpa</artifactId>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-starter-data-jpa</artifactId>-->
+<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
     <dependencies>
