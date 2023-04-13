@@ -1,0 +1,26 @@
+package com.nikitalipatov.websocketserver.example;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.listener.ChannelTopic;
+import org.springframework.stereotype.Component;
+
+@Component
+public class RedisMessagePublisher implements MessagePublisher {
+
+    @Autowired
+    private RedisTemplate<String, Object> redisTemplate;
+
+    @Autowired
+    private ChannelTopic topic;
+
+    public RedisMessagePublisher(RedisTemplate<String, Object> redisTemplate, ChannelTopic topic) {
+        this.topic = topic;
+        this.redisTemplate = redisTemplate;
+    }
+
+    @Override
+    public void publish(String message) {
+        redisTemplate.convertAndSend(topic.getTopic(), message);
+    }
+}

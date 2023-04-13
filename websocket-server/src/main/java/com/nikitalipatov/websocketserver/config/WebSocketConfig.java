@@ -17,17 +17,11 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         registry.enableSimpleBroker("/topic");
         registry.setApplicationDestinationPrefixes("/app");
-
-//        registry.enableSimpleBroker(TOPIC_DESTINATION_PREFIX);
-//        registry.setApplicationDestinationPrefixes("/app");
-//        registry.setUserDestinationPrefix("/user");
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/gs-guide-websocket");
-
-//        registry.addEndpoint(REGISTRY);
+        registry.addEndpoint(REGISTRY).setAllowedOrigins("*");
     }
 
 }

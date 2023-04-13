@@ -1,15 +1,15 @@
-package com.nikitalipatov.websocketserver;
+package com.nikitalipatov.loadbalancer;
 
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
 @SpringBootApplication
-public class WebsocketServerApplication {
+//@EnableFeignClients(clients = {RoomClient.class})
+public class LoadBalancerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(WebsocketServerApplication.class, args);
+        SpringApplication.run(LoadBalancerApplication.class, args);
     }
 
 }

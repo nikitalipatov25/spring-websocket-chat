@@ -14,6 +14,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>websocket-server</module>
+        <module>demo</module>
+        <module>common</module>
+        <module>load-balancer</module>
     </modules>
     <name>websocket-chat</name>
     <description>websocket-chat</description>
@@ -21,38 +24,54 @@
         <java.version>17</java.version>
         <postgresql-version>42.5.4</postgresql-version>
         <lombock-version>1.18.26</lombock-version>
+        <feign-version>4.0.1</feign-version>
+        <balancer-version>4.0.2</balancer-version>
+        <spring-cloud.version>2022.0.2</spring-cloud.version>
+        <ribbon-version>1.4.7.RELEASE</ribbon-version>
     </properties>
     <dependencyManagement>
         <dependencies>
-<!--            <dependency>-->
-<!--                <groupId>org.postgresql</groupId>-->
-<!--                <artifactId>postgresql</artifactId>-->
-<!--                <scope>runtime</scope>-->
-<!--                <version>${postgresql-version}</version>-->
-<!--            </dependency>-->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <optional>true</optional>
                 <version>${lombock-version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${feign-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>3.0.4</version>
+            </dependency>
 <!--            <dependency>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-starter-data-jpa</artifactId>-->
+<!--                <groupId>org.springframework.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-loadbalancer</artifactId>-->
+<!--                <version>${balancer-version}</version>-->
 <!--            </dependency>-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-starter-ribbon</artifactId>-->
+<!--                <version>${ribbon-version}</version>-->
+<!--            </dependency>-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <scope>test</scope>
+                <version>3.0.4</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
